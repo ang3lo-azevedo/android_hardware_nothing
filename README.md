@@ -8,9 +8,9 @@ This fork is based on `DaViDev985/android_hardware_nothing` @ `derp16.2` (forked
 
 | Source | Branch | Contributions |
 |--------|--------|---------------|
-| DaViDev985 | `derp16.2` | Base: NtOnlineConfig stub, ParanoidGlyph, GlyphAdapter, nt-fwk |
-| StudioKeys-Dumps | `waterlily-qpr2` | NGlyphs/GlyphManager (org.aspends.nglyphs) - 20 commits |
-| kleidione | `bp4a` | Fingerprint: Wait for goodix_fp node and add HAL null guards |
+| [DaViDev985](https://github.com/DaViDev985/android_hardware_nothing) | [`derp16.2`](https://github.com/DaViDev985/android_hardware_nothing) | Base: NtOnlineConfig stub, ParanoidGlyph, GlyphAdapter, nt-fwk |
+| [StudioKeys-Dumps](https://github.com/StudioKeys-Dumps/hardware_nothing) | [`waterlily-qpr2`](https://github.com/StudioKeys-Dumps/hardware_nothing) | NGlyphs/GlyphManager (org.aspends.nglyphs) - 20 commits |
+| [kleidione](https://github.com/kleidione/hardware_nothing) | [`bp4a`](https://github.com/kleidione/hardware_nothing) | Fingerprint: Wait for goodix_fp node and add HAL null guards |
 
 ## Tree Structure
 
