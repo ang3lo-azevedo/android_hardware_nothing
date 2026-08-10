@@ -1,40 +1,41 @@
-# Hardware: Nothing Phone (1)
+# Hardware/Nothing for Nothing Phone (1) (Spacewar)
 
-NGlyphs LED HAL and related hardware support for Nothing Phone (1) on VoltageOS.
+Hardware abstraction layer support for the Nothing Phone (1). Provides the glyph LED control, fingerprint HAL, and Nothing framework integration for AOSP-based ROMs.
 
-## NGlyphs
+## Source History
 
-System app replacement for Nothing's Glyph LED interface. No root required.
+This fork is based on `DaViDev985/android_hardware_nothing` @ `derp16.2` (forked from `LineageOS/android_hardware_nothing`) with additional patches:
 
-Features:
-- LED notification patterns
-- Audio-glyph synchronization
-- Music visualizer
-- Recording LED indicator
+| Source | Branch | Contributions |
+|--------|--------|---------------|
+| [DaViDev985](https://github.com/DaViDev985/android_hardware_nothing) | [`derp16.2`](https://github.com/DaViDev985/android_hardware_nothing) | Base: NtOnlineConfig stub, ParanoidGlyph, GlyphAdapter, nt-fwk |
+| [StudioKeys-Dumps](https://github.com/StudioKeys-Dumps/hardware_nothing) | [`waterlily-qpr2`](https://github.com/StudioKeys-Dumps/hardware_nothing) | NGlyphs/GlyphManager (org.aspends.nglyphs) - 20 commits |
+| [kleidione](https://github.com/kleidione/hardware_nothing) | [`bp4a`](https://github.com/kleidione/hardware_nothing) | Fingerprint: Wait for goodix_fp node and add HAL null guards |
 
-Based on 20 commits cherry-picked from [StudioKeys-Dumps](https://github.com/StudioKeys-Dumps/hardware_nothing) `waterlily-qpr2` branch.
+## Tree Structure
 
-## Components
+```
+GlyphAdapter/   - Glyph service adapter (used by both ParanoidGlyph and NGlyphs)
+NGlyphs/        - GlyphManager app (org.aspends.nglyphs, replaces ParanoidGlyph)
+hidl/           - Fingerprint HAL (goodix_fp)
+nt-fwk/         - Nothing framework (NtOnlineConfig stub for Nothing Camera)
+```
 
-- NGlyphs LED HAL service
-- Fingerprint HAL
-- Nothing-specific hardware abstraction
+## Features
 
-## Branches
-
-| Branch | Android | User |
-|--------|---------|------|
-| `lineage-24.0` | 17 | VoltageOS |
-| `16.2-nglyphs` | 16 | VoltageOS (legacy) |
-| `16.2` | 16 | DaViDev985 base |
-| `16.0` | 16 | Archive |
+- **NGlyphs** - System app for glyph LED control, no root required
+  - Call and notification LED patterns with audio-glyph sync
+  - Recording indicator LED service
+  - Music visualizer with stock Nothing behaviour
+  - Glyph Converter with Opus-in-Ogg encoding
+  - Essential lights, sleep mode, battery animations
+  - Third-party app support via GlyphAdapter
+- **Fingerprint** - Goodix FP with null guards and node wait fix
+- **NtOnlineConfig** - Stub implementation required by Nothing Camera
 
 ## Credits
 
-- [DaViDev985](https://github.com/DaViDev985/android_hardware_nothing) — ParanoidGlyph base
-- [StudioKeys-Dumps](https://github.com/StudioKeys-Dumps/hardware_nothing) — NGlyphs implementation
-- [LineageOS](https://github.com/LineageOS) — hardware/nothing base
-
-## Maintainer
-
-Ângelo Azevedo
+- [DaViDev985](https://github.com/DaViDev985) - hardware/nothing base, NtOnlineConfig stub
+- [Jis G Jacob (StudioKeys)](https://github.com/StudioKeys-Dumps) - NGlyphs implementation
+- [kleidione](https://github.com/kleidione) - Fingerprint HAL fix
+- [LineageOS](https://github.com/LineageOS) - upstream hardware/nothing
