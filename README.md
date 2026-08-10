@@ -39,3 +39,15 @@ nt-fwk/         - Nothing framework (NtOnlineConfig stub for Nothing Camera)
 - [Jis G Jacob (StudioKeys)](https://github.com/StudioKeys-Dumps) - NGlyphs implementation
 - [kleidione](https://github.com/kleidione) - Fingerprint HAL fix
 - [LineageOS](https://github.com/LineageOS) - upstream hardware/nothing
+
+## Branches
+
+| Branch | Android | Status |
+|--------|---------|--------|
+| `lineage-24.0` | 17 | Active |
+| `16.2-nglyphs` | 16 | Production |
+| `16.2` | 16 | DaViDev985 base |
+
+## Maintainer
+
+Angelo Azevedo
